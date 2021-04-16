@@ -60,3 +60,5 @@ buck-out/
 
 # CPU state file
 *.hprof
+
+xtra/
