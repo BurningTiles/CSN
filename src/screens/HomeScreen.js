@@ -58,40 +58,71 @@ class HomeScreen extends Component {
       <ImageBackground
         source={require('./../assets/bg1.jpg')}
         style={styles.bgimage}>
-        <View style={{height: '80%', alignItems: 'center'}}>
-          <View style={styles.list}>
-            <TouchableOpacity
-              style={styles.iconStyle}
-              onPress={() => {
-                this.props.navigation.navigate('Chat', {
-                  email: this.state.user.email,
-                  name: this.state.user.name,
-                });
-              }}>
-              <Image
-                source={require('../assets/logo/chat.png')}
+        <View style={{width: '80%', height: '80%'}}>
+          <View style={styles.col}>
+            <View style={styles.row}>
+              <TouchableOpacity
                 style={styles.iconStyle}
-              />
-              <Text style={styles.name}>Chat Room</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.iconStyle}
-              onPress={() => {
-                this.props.navigation.navigate('Feedback');
-              }}>
-              <Image
-                source={require('../assets/logo/feedback.png')}
+                onPress={() => {
+                  this.props.navigation.navigate('Chat', {
+                    email: this.state.user.email,
+                    name: this.state.user.name,
+                  });
+                }}>
+                <Image
+                  source={require('../assets/logo/chat.png')}
+                  style={styles.iconStyle}
+                />
+                <Text style={styles.name}>Chat Room</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
                 style={styles.iconStyle}
-              />
-              <Text style={styles.name}>Feedback</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.iconStyle} onPress={this.signout}>
-              <Image
-                source={require('../assets/logo/logout.png')}
+                onPress={() => {
+                  this.props.navigation.navigate('Feedback');
+                }}>
+                <Image
+                  source={require('../assets/logo/feedback.png')}
+                  style={styles.iconStyle}
+                />
+                <Text style={styles.name}>Feedback</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.row}>
+              <TouchableOpacity
                 style={styles.iconStyle}
-              />
-              <Text style={styles.name}>Signout</Text>
-            </TouchableOpacity>
+                onPress={() => {
+                  this.props.navigation.navigate('Profile', {
+                    email: this.state.user.email,
+                    name: this.state.user.name,
+                  });
+                }}>
+                <Image
+                  source={require('../assets/logo/profile.png')}
+                  style={styles.iconStyle}
+                />
+                <Text style={styles.name}>Profile</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.iconStyle}
+                onPress={() => {
+                  this.props.navigation.navigate('Feed');
+                }}>
+                <Image
+                  source={require('../assets/logo/feed.png')}
+                  style={styles.iconStyle}
+                />
+                <Text style={styles.name}>Feed</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.row}>
+              <TouchableOpacity style={styles.iconStyle} onPress={this.signout}>
+                <Image
+                  source={require('../assets/logo/logout.png')}
+                  style={styles.iconStyle}
+                />
+                <Text style={styles.name}>Signout</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </ImageBackground>
@@ -153,10 +184,17 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
   },
-  list: {
+  col: {
     height: '100%',
     flexDirection: 'column',
+    justifyContent: 'space-around',
+  },
+  row: {
+    width: '100%',
+    flexDirection: 'row',
     justifyContent: 'space-around',
   },
   name: {
