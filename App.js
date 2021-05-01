@@ -6,6 +6,8 @@ import HomeScreen from './src/screens/HomeScreen';
 import SignupScreen from './src/screens/SignupScreen';
 import FeedbackScreen from './src/screens/FeedbackScreen';
 import ChatScreen from './src/screens/ChatScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
+import FeedScreen from './src/screens/FeedScreen';
 
 const AppNavigator = createStackNavigator(
   {
@@ -14,7 +16,9 @@ const AppNavigator = createStackNavigator(
 		Signin: SigninScreen,
 		Signup: SignupScreen,
 		Feedback: FeedbackScreen,
-    Chat: ChatScreen,
+		Chat: ChatScreen,
+		Profile: ProfileScreen,
+		Feed: FeedScreen,
   },
   {
     headerMode: 'none',
